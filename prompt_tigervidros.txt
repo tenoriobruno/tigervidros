@@ -1,0 +1,296 @@
+CONTEXTO DO PROJETO:
+Site institucional de uma página para a vidraçaria TigerVidros.
+Empresa pequena, início de operação. Usuário com pouca experiência em frontend.
+Objetivo principal: gerar contatos via WhatsApp e direcionar para redes sociais.
+
+ARQUIVOS A CRIAR:
+- index.html
+- css/style.css
+- js/main.js
+
+═══════════════════════════════════════════
+REGRAS INEGOCIÁVEIS
+═══════════════════════════════════════════
+
+Aplicar antes de escrever qualquer linha:
+
+- HTML, CSS e JS puro. Zero frameworks, zero CDN, zero bibliotecas externas
+- Sem Google Fonts. Usar: system-ui, -apple-system, sans-serif
+- Zero valores hardcoded de cor, espaço ou fonte no CSS — tudo via variáveis
+- Sem !important, sem IDs no CSS, sem seletores com mais de 2 níveis
+- Nenhuma função duplicada entre arquivos
+- JS com no máximo 60 linhas totais
+- index.html sem <style> inline
+- main.js sem element.style (sem CSS inline via JS)
+- Se uma solução tem mais de 20 linhas, existe uma versão de 10 — use ela
+- Links externos: sempre target="_blank" rel="noopener noreferrer"
+- Imagens: sempre atributo alt preenchido
+- Placeholders editáveis marcados com comentário: <!-- EDITAR -->
+
+═══════════════════════════════════════════
+SISTEMA DE DESIGN
+═══════════════════════════════════════════
+
+Copiar exatamente no topo do style.css:
+
+:root {
+  /* Paleta */
+  --c-900: #0F1115;
+  --c-800: #1C2F7A;
+  --c-600: #2F5FBF;
+  --c-400: #4FA3E3;
+  --c-200: #8FD3F4;
+  --c-000: #F0F8FF;
+
+  /* Semântica */
+  --bg:         var(--c-900);
+  --bg-card:    #161B2E;
+  --border:     rgba(79, 163, 227, 0.15);
+  --text:       var(--c-000);
+  --text-muted: var(--c-200);
+  --accent:     var(--c-400);
+  --cta:        var(--c-600);
+  --cta-hover:  var(--c-400);
+
+  /* Espaçamento */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2rem;
+  --s-6: 3rem;
+  --s-8: 4rem;
+
+  /* Tipografia */
+  --font:      system-ui, -apple-system, sans-serif;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.25rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  2.5rem;
+
+  /* Bordas e elevação */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow:    0 4px 24px rgba(0, 0, 0, 0.4);
+  --glow:      0 0 20px rgba(79, 163, 227, 0.15);
+}
+
+═══════════════════════════════════════════
+PADRÕES DE COMPONENTE
+═══════════════════════════════════════════
+
+Aplicar consistentemente em todos os componentes:
+
+CARD:
+  background:    var(--bg-card)
+  border:        1px solid var(--border)
+  border-radius: var(--radius-md)
+  padding:       var(--s-3)
+  transition:    border-color 0.2s ease
+  hover →        border-color: var(--accent)
+
+BOTÃO PRIMÁRIO (CTA):
+  background:    var(--cta)
+  color:         var(--text)
+  padding:       var(--s-2) var(--s-4)
+  border-radius: var(--radius-sm)
+  font-weight:   600
+  border:        none
+  cursor:        pointer
+  transition:    background 0.2s, transform 0.15s
+  hover →        background: var(--cta-hover), transform: translateY(-1px)
+
+BOTÃO SECUNDÁRIO:
+  background:    transparent
+  border:        1px solid var(--accent)
+  color:         var(--accent)
+  padding:       var(--s-2) var(--s-4)
+  border-radius: var(--radius-sm)
+  cursor:        pointer
+  transition:    background 0.2s
+  hover →        background: rgba(79, 163, 227, 0.1)
+
+SEÇÃO:
+  padding:    var(--s-8) var(--s-4)
+  max-width:  1100px
+  margin:     0 auto
+
+SEPARAÇÃO ENTRE SEÇÕES:
+  background: linear-gradient(180deg, var(--bg) 0%, #0d1829 50%, var(--bg) 100%)
+  (alternar entre --bg puro e esse gradiente a cada seção)
+
+LINKS DE REDE SOCIAL:
+  display:       flex
+  align-items:   center
+  gap:           var(--s-1)
+  padding:       var(--s-2) var(--s-3)
+  border-radius: var(--radius-sm)
+  font-weight:   600
+  Instagram →    background: #E1306C
+  TikTok →       background: #010101, border: 1px solid #69C9D0
+  Facebook →     background: #1877F2
+
+═══════════════════════════════════════════
+SEÇÕES — ORDEM E CONTEÚDO
+═══════════════════════════════════════════
+
+── 1. HEADER FIXO ──────────────────────────
+
+- position: fixed, top: 0, width: 100%, z-index: 100
+- background: rgba(15, 17, 21, 0.85), backdrop-filter: blur(12px)
+- Logo à esquerda: texto "TigerVidros" em --accent, font-weight: 700
+  Substituir por <img> quando arquivo for fornecido <!-- EDITAR -->
+- Nav central: links âncora → #servicos, #redes, #contato
+- Botão direito: "Orçamento no WhatsApp" → botão primário
+  Link: https://wa.me/5511999999999 <!-- EDITAR -->
+- Ao rolar 80px: adicionar classe .scrolled via JS
+  .scrolled → background: var(--bg), box-shadow: var(--shadow)
+
+── 2. HERO ─────────────────────────────────
+
+- min-height: 100vh, display: flex, align-items: center
+- background: linear-gradient(135deg, var(--c-800) 0%, var(--bg) 60%)
+- Título H1: "Vidros com precisão e qualidade"
+  font-size: var(--text-2xl), font-weight: 700
+- Subtítulo: "Box, espelhos, vidros temperados e fachadas para sua obra"
+  font-size: var(--text-lg), color: var(--text-muted)
+- Dois botões lado a lado:
+  Primário: "Pedir orçamento" → WhatsApp <!-- EDITAR mesmo link -->
+  Secundário: "Ver serviços" → scroll para #servicos
+- Elemento decorativo: div com gradiente radial em --c-600, opacity: 0.15
+  position: absolute, 600px × 600px, blur(80px), pointer-events: none
+
+── 3. SERVIÇOS ─────────────────────────────
+
+- id="servicos"
+- Título da seção: "Nossos serviços"
+- Grid 2×2 mobile, 4 colunas desktop
+- 4 cards com padrão CARD definido acima:
+  · Box de Banheiro     — ícone SVG inline simples
+  · Espelhos            — ícone SVG inline simples
+  · Vidro Temperado     — ícone SVG inline simples
+  · Fachadas e Sacadas  — ícone SVG inline simples
+- Cada card: ícone (24×24, cor --accent) + título + 1 linha de descrição
+- Ícones: SVG inline, traço simples, sem preenchimento, stroke: currentColor
+
+── 4. DIFERENCIAIS ─────────────────────────
+
+- Background: gradiente de seção (alternado)
+- 3 itens em linha (flex, wrap em mobile):
+  · "Atendimento rápido"        — ícone SVG + título + texto curto
+  · "Instalação profissional"   — ícone SVG + título + texto curto
+  · "Orçamento gratuito"        — ícone SVG + título + texto curto
+- Sem card — layout mais aberto, só ícone + texto
+
+── 5. REDES SOCIAIS ────────────────────────
+
+- id="redes"
+- Título: "Acompanhe nosso trabalho"
+- Subtítulo: "Projetos, bastidores e novidades no nosso perfil"
+- 3 botões grandes, centralizados, gap: var(--s-2):
+  Instagram → https://www.instagram.com/tigervidros/
+  TikTok    → https://www.tiktok.com/@tiger.vidros
+  Facebook  → https://www.facebook.com/tigervidros <!-- EDITAR -->
+- Todos: target="_blank" rel="noopener noreferrer"
+- Cores definidas em LINKS DE REDE SOCIAL acima
+
+── 6. CONTATO / FOOTER ─────────────────────
+
+- id="contato"
+- Background: var(--bg)
+- Bloco central com:
+  · Título: "Fale com a gente"
+  · Botão primário grande: "Abrir WhatsApp" → mesmo link <!-- EDITAR -->
+  · Texto: "Atendemos [cidade] e região" <!-- EDITAR -->
+- Linha divisória: 1px solid var(--border)
+- Footer final:
+  · "© 2025 TigerVidros — Todos os direitos reservados"
+  · Ícones pequenos das 3 redes (SVG inline, 20×20)
+
+── BOTÃO FLUTUANTE WHATSAPP ─────────────────
+
+- position: fixed, bottom: var(--s-3), right: var(--s-3)
+- z-index: 200
+- Círculo 56×56px, background: #25D366
+- Ícone SVG do WhatsApp, branco, 28×28
+- box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4)
+- hover → transform: scale(1.08)
+- Não sobrepor o header em nenhum tamanho de tela
+
+═══════════════════════════════════════════
+ARQUITETURA CSS
+═══════════════════════════════════════════
+
+Ordem obrigatória no style.css:
+
+1. :root
+2. Reset: *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+3. Base: html, body, img, a
+4. Layout: .container, .section-wrapper
+5. Header e nav
+6. Hero
+7. Serviços
+8. Diferenciais
+9. Redes sociais
+10. Contato e footer
+11. Botão flutuante
+12. Utilitários: .sr-only
+13. @media (max-width: 768px) — único bloco, no final
+
+═══════════════════════════════════════════
+ARQUITETURA JS
+═══════════════════════════════════════════
+
+main.js — estrutura obrigatória, nesta ordem:
+
+1. Scroll suave para âncoras do nav
+2. Header: adicionar/remover classe .scrolled ao passar 80px
+3. Menu hambúrguer: toggle de classe .open no nav (mobile)
+4. Nada mais. Sem eventos desnecessários, sem variáveis globais
+
+Mobile nav:
+- Botão hambúrguer visível apenas em mobile (display: none em desktop)
+- Ao clicar: nav-links recebe classe .open → display: flex, flex-direction: column
+- Fechar ao clicar em qualquer link do menu
+
+═══════════════════════════════════════════
+RESPONSIVIDADE
+═══════════════════════════════════════════
+
+- Mobile-first
+- Breakpoint único: 768px
+- Em mobile (< 768px):
+  · Nav vira hambúrguer
+  · Grid de serviços: 1 coluna (não 2×2)
+  · Botões Hero: empilhados, width: 100%
+  · Botões de redes: empilhados, width: 100%
+  · Padding lateral: var(--s-2) em todas as seções
+  · Botão flutuante: bottom e right = var(--s-2)
+
+═══════════════════════════════════════════
+CHECKLIST — REVISAR ANTES DE ENTREGAR
+═══════════════════════════════════════════
+
+Código:
+□ Nenhum console.log ou código morto
+□ JS tem menos de 60 linhas
+□ Nenhuma cor, espaço ou fonte hardcoded no CSS
+□ Sem seletores CSS com mais de 2 níveis
+□ Sem !important
+□ Todas as imagens com alt preenchido
+□ Links externos com rel="noopener noreferrer"
+
+Visual:
+□ Botão WhatsApp flutuante visível em 375px sem scroll
+□ Nenhum elemento ultrapassa a largura da tela em mobile
+□ Hover em todos os elementos clicáveis
+□ Espaçamento usa apenas variáveis --s-*
+□ Alternância de fundo entre seções aplicada
+
+Arquitetura:
+□ index.html sem <style> inline
+□ main.js sem element.style
+□ Comentários <!-- EDITAR --> em todos os placeholders
+□ CSS na ordem definida em ARQUITETURA CSS
+□ Media queries em bloco único no final do CSS
