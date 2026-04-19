@@ -1,0 +1,17 @@
+Os três arquivos foram criados. Resumo do que foi entregue:                                                                      
+                                                                                                                                   
+  index.html — estrutura completa com 6 seções na ordem correta, todos os links externos com target="_blank" rel="noopener         
+  noreferrer", comentários <!-- EDITAR --> em todos os placeholders (WhatsApp, cidade, Facebook, logo).                            
+                                                                                                                                   
+  css/style.css — segue a arquitetura obrigatória em 13 blocos ordenados. O :root foi copiado exatamente + variáveis adicionais    
+  para cobrir todas as cores de marca (WhatsApp, Instagram, TikTok, Facebook) sem nenhum valor hardcoded no CSS. Nenhum seletor com
+   mais de 2 níveis, sem !important, @media único no final.                                                                        
+                                                                                                                                   
+  js/main.js — 13 linhas (limite: 60), zero element.style, implementa: toggle .scrolled no header ao rolar 80px, hambúrguer toggle 
+  .open, e fechamento do menu ao clicar em qualquer link.
+                                                                                                                                   
+  Placeholders para editar:                                                                                                        
+  - Número do WhatsApp: https://wa.me/5511999999999 (4 ocorrências)
+  - Cidade: [cidade] no rodapé de contato                                                                                          
+  - Link do Facebook (marcado como verificar)
+  - Logo: trocar <span class="logo">TigerVidros</span> por <img> quando disponível
