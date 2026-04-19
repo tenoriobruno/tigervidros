@@ -1,0 +1,100 @@
+ADICIONAR 2 SEÇÕES - PORTFÓLIO E AVALIAÇÕES
+
+PROJETO: TigerVidros (site vidraçaria)
+REGRAS: HTML/CSS/JS puro. Sem frameworks. Max 60 linhas total JS.
+
+═══════════════════════════════════════════
+
+SEÇÃO 1: PORTFÓLIO (após #servicos)
+
+<section id="portfolio" class="section-wrapper">
+  <div class="container">
+    <h2 class="section-title">Portfólio</h2>
+    <div class="portfolio-grid">
+      [6 cards com:
+       - img src="images/portfolio-X.jpg" alt="Projeto X"
+       - h3 título projeto
+       - p descrição breve]
+    </div>
+  </div>
+</section>
+
+CSS adicionar:
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--sp-4);
+}
+
+.portfolio-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+═══════════════════════════════════════════
+
+SEÇÃO 2: AVALIAÇÕES (após #portfolio)
+
+<section id="reviews" class="section-wrapper section-alt">
+  <div class="container">
+    <h2 class="section-title">Avaliações de Clientes</h2>
+    <div class="reviews-container" id="reviewsContainer">
+      <!-- carregado por JS -->
+    </div>
+  </div>
+</section>
+
+CSS adicionar:
+.reviews-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--sp-4);
+  overflow-x: auto;
+  padding-bottom: var(--sp-2);
+}
+
+.review-card {
+  min-width: 280px;
+  padding: var(--sp-3);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.review-stars {
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+═══════════════════════════════════════════
+
+JS ADICIONAR (main.js):
+
+async function loadReviews() {
+  const container = document.getElementById('reviewsContainer');
+  const response = await fetch('data/reviews.json');
+  const reviews = await response.json();
+  
+  container.innerHTML = reviews.map(r => `
+    <div class="review-card">
+      <div class="review-stars">${'⭐'.repeat(r.rating)}</div>
+      <p>${r.text}</p>
+      <p style="color: var(--text-muted); font-size: 0.875rem;">- ${r.name}</p>
+    </div>
+  `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', loadReviews);
+
+═══════════════════════════════════════════
+
+IMAGENS PLACEHOLDER NECESSÁRIAS:
+- images/portfolio-1.jpg até portfolio-6.jpg
+- Criar com Unsplash ou similar: buscar "vidro instalação" "box banheiro" etc
+
+═══════════════════════════════════════════
+
+PRONTO: Cole as seções em index.html, CSS em style.css, JS em main.js.
+Não altere nada existente. Apenas ADICIONE.
