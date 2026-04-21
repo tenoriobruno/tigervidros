@@ -1,100 +1,42 @@
-ADICIONAR 2 SEÇÕES - PORTFÓLIO E AVALIAÇÕES
+Adicione ao site existente uma seção de “Trabalhos Realizados” (portfólio) para a TigerVidros.
 
-PROJETO: TigerVidros (site vidraçaria)
-REGRAS: HTML/CSS/JS puro. Sem frameworks. Max 60 linhas total JS.
+Objetivo:
+Exibir serviços já feitos para gerar confiança e aumentar conversão.
 
-═══════════════════════════════════════════
+Requisitos:
 
-SEÇÃO 1: PORTFÓLIO (após #servicos)
+1. Estrutura
+- Criar uma nova seção no index.html com id "portfolio"
+- Título: "Trabalhos Realizados"
+- Subtítulo curto opcional (ex: "Veja alguns dos nossos serviços")
 
-<section id="portfolio" class="section-wrapper">
-  <div class="container">
-    <h2 class="section-title">Portfólio</h2>
-    <div class="portfolio-grid">
-      [6 cards com:
-       - img src="images/portfolio-X.jpg" alt="Projeto X"
-       - h3 título projeto
-       - p descrição breve]
-    </div>
-  </div>
-</section>
+2. Conteúdo
+- Exibir uma grade (grid) de imagens
+- Cada item deve conter:
+  - imagem
+  - pequena descrição (ex: "Box de banheiro", "Espelho sob medida")
 
-CSS adicionar:
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--sp-4);
-}
+3. Dados
+- Os itens do portfólio devem ser definidos no script.js como um array de objetos
+- Renderizar os itens dinamicamente via JavaScript
 
-.portfolio-grid img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 4px;
-}
+4. Layout e estilo
+- Grid responsivo (mínimo 2 colunas no mobile, mais em telas maiores)
+- Seguir a identidade visual existente:
+  - fundo escuro (#0F1115)
+  - tons de azul (#1C2F7A, #2F5FBF, #4FA3E3)
+- Cards simples, com leve borda ou efeito sutil
+- Hover com leve destaque
 
-═══════════════════════════════════════════
+5. Boas práticas
+- Código simples e organizado
+- Não usar frameworks
+- Não alterar outras seções do site
+- Reutilizar classes existentes se possível
 
-SEÇÃO 2: AVALIAÇÕES (após #portfolio)
+6. Opcional (se simples)
+- Ao clicar na imagem, ampliar (lightbox simples)
 
-<section id="reviews" class="section-wrapper section-alt">
-  <div class="container">
-    <h2 class="section-title">Avaliações de Clientes</h2>
-    <div class="reviews-container" id="reviewsContainer">
-      <!-- carregado por JS -->
-    </div>
-  </div>
-</section>
-
-CSS adicionar:
-.reviews-container {
-  display: grid;
-  grid-auto-flow: column;
-  gap: var(--sp-4);
-  overflow-x: auto;
-  padding-bottom: var(--sp-2);
-}
-
-.review-card {
-  min-width: 280px;
-  padding: var(--sp-3);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-}
-
-.review-stars {
-  color: #FFD700;
-  margin-bottom: 8px;
-}
-
-═══════════════════════════════════════════
-
-JS ADICIONAR (main.js):
-
-async function loadReviews() {
-  const container = document.getElementById('reviewsContainer');
-  const response = await fetch('data/reviews.json');
-  const reviews = await response.json();
-  
-  container.innerHTML = reviews.map(r => `
-    <div class="review-card">
-      <div class="review-stars">${'⭐'.repeat(r.rating)}</div>
-      <p>${r.text}</p>
-      <p style="color: var(--text-muted); font-size: 0.875rem;">- ${r.name}</p>
-    </div>
-  `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', loadReviews);
-
-═══════════════════════════════════════════
-
-IMAGENS PLACEHOLDER NECESSÁRIAS:
-- images/portfolio-1.jpg até portfolio-6.jpg
-- Criar com Unsplash ou similar: buscar "vidro instalação" "box banheiro" etc
-
-═══════════════════════════════════════════
-
-PRONTO: Cole as seções em index.html, CSS em style.css, JS em main.js.
-Não altere nada existente. Apenas ADICIONE.
+Importante:
+- Não reestruturar o site inteiro
+- Fazer apenas o necessário para adicionar essa seção
