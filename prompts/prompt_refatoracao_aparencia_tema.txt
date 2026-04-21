@@ -1,0 +1,119 @@
+You are a senior frontend engineer and UI designer specializing in high-conversion, premium B2B websites.
+
+Your task is to refactor or build a website for a glass company (vidraçaria), ensuring the design is modern, trustworthy, and conversion-focused.
+
+---
+
+## 🎨 THEME SELECTION (IMPORTANT)
+
+Choose ONE of the following design directions:
+
+[THEME OPTIONS]
+1. Glassmorphism Modern (DEFAULT - RECOMMENDED)
+2. Minimal Corporate Architecture (B2B clean)
+3. Futuristic Smart Glass / Tech SaaS style
+
+👉 SELECTED THEME: 1
+
+---
+
+## 🧩 SELECTED THEME DETAILS
+
+### 1. Glassmorphism Modern (DEFAULT)
+- Bright, clean background (white / off-white / very light gray)
+- Glass-like UI cards with blur (backdrop-filter)
+- Subtle shadows, soft borders
+- Premium architectural feel
+- Large hero section with high-quality glass/architecture imagery
+- Strong typography hierarchy
+- Smooth spacing and breathing room
+- Avoid dark backgrounds completely
+- Focus: elegance + premium construction/architecture aesthetic
+
+### 2. Minimal Corporate Architecture
+- Fully white background
+- Grid-based strict layout
+- Very minimal decoration
+- Focus on trust, clarity, professionalism
+- Strong CTA sections for quotes
+
+### 3. Futuristic Smart Glass / SaaS Style
+- Clean tech-inspired layout
+- Light blue / cool gray accents
+- Soft gradients
+- Subtle animations
+- Modular SaaS-like sections (features, benefits, cases)
+
+---
+
+## 🏗️ BUSINESS CONTEXT
+
+This is a glass company (vidraçaria). The website must communicate:
+
+- Installation of glass, windows, doors, facades
+- Residential and commercial services
+- Trust, precision, safety
+- Fast quote request
+
+Primary goal: generate leads (orçamentos)
+
+---
+
+## 📱 UI/UX REQUIREMENTS
+
+- Fully responsive (mobile-first)
+- Clear visual hierarchy (hero → services → portfolio → testimonials → CTA)
+- High readability (no over-light text on white)
+- Strong CTA buttons:
+  - “Solicitar orçamento”
+  - “Falar no WhatsApp”
+- Use real section structure, not just UI mock
+- Avoid empty whitespace without meaning (no “blank feel”)
+- Use real-world copy (not lorem ipsum)
+
+---
+
+## 🧱 STRUCTURE REQUIRED
+
+Build the page with:
+
+1. Hero section (impact + value proposition)
+2. Services section (cards)
+3. Portfolio / projects gallery
+4. Why choose us (trust section)
+5. Testimonials
+6. Contact / CTA section (WhatsApp focused)
+
+---
+
+## ⚙️ DESIGN SYSTEM RULES
+
+- Typography: modern sans-serif (Inter, system UI or equivalent)
+- Spacing: generous but structured
+- Colors:
+  - Primary: neutral + slight blue/gray tint
+  - Background: light only (no dark theme)
+- UI style: premium architectural / glass aesthetic
+- Cards: soft border + blur (if theme 1 is used)
+
+---
+
+## 🚫 DO NOT
+
+- Do NOT use dark theme
+- Do NOT create empty or low-density layouts
+- Do NOT use overly flashy neon UI
+- Do NOT reduce contrast to the point of illegibility
+- Do NOT create generic “startup template look”
+
+---
+
+## 🎯 SUCCESS CRITERIA
+
+The final result must feel like:
+
+"A premium architectural glass company website you'd see in a top-tier design studio portfolio, but optimized for real customer conversion."
+
+---
+
+Now proceed with the implementation based on the selected theme.
