@@ -3,12 +3,12 @@ const nav = document.querySelector('.nav-links');
 const hamburger = document.querySelector('.hamburger');
 
 const portfolioData = [
-  { title: 'Box de Banheiro', desc: 'Vidro temperado com acabamento em alumínio' },
-  { title: 'Espelho Decorativo', desc: 'Espelho sob medida para sala de estar' },
-  { title: 'Divisória em Vidro', desc: 'Divisória para ambientes corporativos' },
-  { title: 'Fachada Moderna', desc: 'Fachada de vidro para edifício comercial' },
-  { title: 'Sacada Fechada', desc: 'Fechamento de sacada com vidro temperado' },
-  { title: 'Espelho Banheiro', desc: 'Espelho bisotado com iluminação embutida' }
+  { title: 'Box de Banheiro', desc: 'Vidro temperado com acabamento em alumínio — Mês passado' },
+  { title: 'Espelho Decorativo', desc: 'Espelho sob medida para sala de estar — São Paulo' },
+  { title: 'Divisória em Vidro', desc: 'Divisória para consultório corporativo — Guarulhos' },
+  { title: 'Fachada Moderna', desc: 'Fachada de vidro para edifício de escritórios — Alto Tietê' },
+  { title: 'Sacada Fechada', desc: 'Fechamento de sacada em vidro temperado — Projeto recente' },
+  { title: 'Espelho Banheiro', desc: 'Espelho bisotado com acabamento em alumínio — Poá' }
 ];
 
 function renderPortfolio() {
