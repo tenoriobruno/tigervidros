@@ -1,0 +1,46 @@
+Aplique melhorias finais de acabamento no site TigerVidros para aumentar profissionalismo, qualidade percebida e boas práticas.
+
+Objetivo:
+Deixar o site mais completo, confiável e bem finalizado, sem alterar layout ou estrutura.
+
+TAREFA:
+
+1. Favicon
+- Adicionar favicon usando o logo da empresa
+- Configurar corretamente no HTML (head)
+- Usar formato leve e compatível (png ou ico)
+
+2. Title e Meta Description
+- Revisar ou criar:
+  - <title> otimizado com palavras-chave (vidraçaria, São Paulo, etc.)
+  - meta description clara e atrativa
+
+3. Imagens (boas práticas)
+- Adicionar atributo alt em todas as imagens
+- Usar descrições simples e relevantes (ex: "box de vidro em banheiro")
+
+4. Performance
+- Aplicar lazy loading nas imagens do portfólio
+- Garantir que não afete layout
+
+5. Consistência final
+- Revisar pequenos detalhes:
+  - textos repetidos ou inconsistentes
+  - espaçamentos básicos
+  - padronização visual
+
+6. Código
+- Manter código simples e organizado
+- Não adicionar bibliotecas ou frameworks
+
+Diretrizes:
+- NÃO alterar estrutura do site
+- NÃO criar novas seções
+- NÃO modificar layout de forma significativa
+- apenas melhorias incrementais
+
+Extra:
+Você pode sugerir pequenas melhorias adicionais se forem simples e alinhadas com qualidade e conversão.
+
+Objetivo final:
+Um site com aparência mais profissional, consistente e pronto para uso real.

@@ -13,11 +13,11 @@ const portfolioData = [
 
 function renderPortfolio() {
   const grid = document.getElementById('portfolio-grid');
-  portfolioData.forEach(item => {
+  portfolioData.forEach((item, idx) => {
     const el = document.createElement('div');
     el.className = 'portfolio-item';
     el.innerHTML = `
-      <div class="portfolio-img">[Imagem]</div>
+      <div class="portfolio-img" role="img" aria-label="${item.title} — ${item.desc}">[Imagem]</div>
       <div class="portfolio-info">
         <h3>${item.title}</h3>
         <p>${item.desc}</p>
