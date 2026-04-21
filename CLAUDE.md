@@ -119,6 +119,28 @@ Otherwise: stay strict.
 
 ---
 
+### Execution Policy (Cost Control)
+
+**Default: DO NOT execute changes.**
+- Do NOT use Edit/Write/Bash tools
+- Do NOT modify files directly
+
+**Always:**
+- Provide code changes in markdown blocks
+- Follow COST-SAVING MODE rules strictly
+
+**Only execute if explicitly instructed:**
+- "implement this"
+- "apply changes"
+- "edit the files"
+- "make the changes"
+
+**Otherwise:**
+- Stay in suggestion mode
+- Do not take autonomous actions
+
+---
+
 ### Deactivation
 
 User must say:
