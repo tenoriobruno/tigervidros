@@ -1,0 +1,25 @@
+{
+  "name": "TigerVidros — Vidros Temperados, Box e Espelhos",
+  "short_name": "TigerVidros",
+  "description": "Serviços de vidraçaria em São Paulo — Box, espelhos e vidros temperados",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#2F5FBF",
+  "background_color": "#0F1115",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/tigervidros_logo.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/tigervidros_logo.ico",
+      "sizes": "32x32 64x64 128x128 256x256",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+}
