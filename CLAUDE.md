@@ -43,3 +43,27 @@ Always use these variables rather than hardcoded values when adding styles.
 - WhatsApp contact: `5511939031930` (used in multiple links throughout index.html)
 - Dark theme throughout; social buttons use their respective brand colors (Instagram gradient, TikTok black, Facebook blue, WhatsApp green `#25D366`)
 - Portfolio section uses gradient placeholder backgrounds — no real images yet
+
+## COST-SAVING MODE
+
+When the user says "modo econômico" or "cost-saving mode", activate this behavior — activate by default.
+
+### Rules (active only in cost-saving mode)
+
+1. **Never use Edit or Write tools.** Provide all code changes as fenced markdown blocks for the user to copy and apply manually.
+2. **One block per file.** If multiple files change, use one fenced block each with a comment header showing the target path.
+3. **Diff-style output preferred.** Show only the lines that change plus 2 lines of context. Use full file content only when the file is new or fewer than 20 lines total.
+4. **No file reads unless essential.** Ask the user to paste the relevant snippet if you need context you don't already have.
+5. **No confirmations or summaries after delivering code.** Stop after the last code block.
+6. **Skip exploratory tool calls.** Reason from conversation context and CLAUDE.md instead of reading files to verify assumptions.
+
+### Output format (cost-saving mode)
+
+```
+// path/to/file.ext  ← always include this comment as first line
+<changed code here>
+```
+
+### Deactivation
+
+Return to normal behavior when the user says "modo normal" or "normal mode".
