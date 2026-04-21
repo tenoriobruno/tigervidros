@@ -44,26 +44,83 @@ Always use these variables rather than hardcoded values when adding styles.
 - Dark theme throughout; social buttons use their respective brand colors (Instagram gradient, TikTok black, Facebook blue, WhatsApp green `#25D366`)
 - Portfolio section uses gradient placeholder backgrounds — no real images yet
 
-## COST-SAVING MODE
+## COST-SAVING MODE (HARD)
 
-When the user says "modo econômico" or "cost-saving mode", activate this behavior — activate by default.
+Activate when the user says "modo econômico" or "cost-saving mode". Default: ON.
 
-### Rules (active only in cost-saving mode)
+### Core Principle
+Minimize tokens in BOTH directions:
+- Fewer inputs (no file reads)
+- Smaller outputs (no explanations)
 
-1. **Never use Edit or Write tools.** Provide all code changes as fenced markdown blocks for the user to copy and apply manually.
-2. **One block per file.** If multiple files change, use one fenced block each with a comment header showing the target path.
-3. **Diff-style output preferred.** Show only the lines that change plus 2 lines of context. Use full file content only when the file is new or fewer than 20 lines total.
-4. **No file reads unless essential.** Ask the user to paste the relevant snippet if you need context you don't already have.
-5. **No confirmations or summaries after delivering code.** Stop after the last code block.
-6. **Skip exploratory tool calls.** Reason from conversation context and CLAUDE.md instead of reading files to verify assumptions.
+---
 
-### Output format (cost-saving mode)
+### Rules
 
-```
-// path/to/file.ext  ← always include this comment as first line
-<changed code here>
-```
+1. **Never use Edit, Write, or Read tools.**
+   - Do NOT open files.
+   - Do NOT inspect the repo.
+   - Assume context from CLAUDE.md + user prompt only.
+   - If missing context, ask user to paste snippet.
+
+2. **Output ONLY code.**
+   - No explanations, no comments outside code.
+   - No summaries before or after.
+
+3. **One block per file.**
+   - Always include file path as first line comment:
+     ```
+// path/to/file.ext
+     ```
+
+4. **Use DIFF format always (mandatory).**
+   - Only changed lines
+   - Include max 2 lines of context
+   - NEVER output full file unless:
+     - file is new OR
+     - file < 20 lines
+
+5. **Be minimalistic in code changes.**
+   - Do not refactor
+   - Do not “improve” unrelated parts
+   - Touch only what was explicitly requested
+
+6. **No proactive suggestions.**
+   - Do not propose improvements
+   - Do not anticipate future changes
+   - Do exactly what was asked
+
+7. **No redundancy.**
+   - Avoid repeated patterns
+   - Avoid long variable names when shorter is clear
+
+8. **Prefer inline solutions over structure changes.**
+   - Avoid creating new files
+   - Avoid abstractions unless strictly necessary
+
+9. **Limit reasoning depth.**
+   - Choose first valid solution
+   - Do not explore alternatives
+
+10. **Stop immediately after last code block.**
+    - No trailing text
+
+---
+
+### When to temporarily relax rules
+
+Only relax if user explicitly asks for:
+- explanation
+- architecture
+- refactor
+- debugging complex issue
+
+Otherwise: stay strict.
+
+---
 
 ### Deactivation
 
-Return to normal behavior when the user says "modo normal" or "normal mode".
+User must say:
+- "modo normal"
+- "normal mode"
