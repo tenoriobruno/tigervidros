@@ -1,0 +1,6 @@
+Crie o cost-saving-section.md contendo a seção COST-SAVING-MODE do CLAUDE.md
+- Instrução para não usar Edit/Write tools por padrão
+- Fornecer código em markdwon para o usuário copiar
+- Economia de pelo menos 75% em tokens ou próximo disso
+- Só implemente quando explicitamente solicitado
+Retorne APENAS o conteúdo markdwon do arquivo, sem comentários

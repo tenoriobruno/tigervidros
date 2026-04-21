@@ -1,0 +1,183 @@
+Seja direto. Leia os arquivos uma vez, faça as modificações, entregue.
+Não explique o que vai fazer antes de fazer. Não peça confirmações intermediárias.
+
+CONTEXTO:
+Site TigerVidros existente com index.html, css/style.css, js/main.js.
+Antes de qualquer modificação, leia os 3 arquivos para identificar:
+- IDs de seções existentes (#servicos, #contato, etc.)
+- Variáveis CSS definidas no :root
+- Funções JS já existentes em main.js
+Não renomeie nada. Não altere código existente.
+
+═══════════════════════════════════════════
+REGRAS ATIVAS
+═══════════════════════════════════════════
+- HTML, CSS e JS puro. Zero CDN, zero fetch(), zero libs externas
+- Apenas variáveis CSS já declaradas no :root existente
+- JS novo: máximo 40 linhas adicionais no main.js
+- CSS: sem !important, sem IDs, máximo 2 níveis de seletor
+- Links externos: target="_blank" rel="noopener noreferrer"
+- Imagens placeholder: div com background via CSS, sem <img> com src quebrado
+
+═══════════════════════════════════════════
+SEÇÃO 1 — PORTFÓLIO
+═══════════════════════════════════════════
+Inserir no index.html imediatamente após a seção #servicos.
+
+HTML:
+<section id="portfolio">
+  <div class="section-wrapper">
+    <h2>Nossos trabalhos</h2>
+    <p class="section-subtitle">Projetos realizados para nossos clientes</p>
+    <div class="portfolio-grid">
+      <!-- 6 cards, repetir estrutura abaixo -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" aria-label="Foto do projeto <!-- EDITAR -->"></div>
+        <div class="portfolio-info">
+          <h3>Box de Banheiro <!-- EDITAR --></h3>
+          <p>Instalação residencial <!-- EDITAR --></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+CSS (adicionar antes do @media existente):
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--s-2);
+}
+.portfolio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.portfolio-card:hover { border-color: var(--accent); }
+.portfolio-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--c-800), var(--c-600));
+  background-size: cover;
+  background-position: center;
+}
+.portfolio-info { padding: var(--s-2); }
+.portfolio-info h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--s-1);
+}
+.portfolio-info p {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+SUBSTITUIÇÃO DE IMAGEM REAL (instruir com comentário no HTML):
+Para usar foto real, adicionar ao elemento .portfolio-img:
+style="background-image: url('assets/foto-1.jpg')"
+Criar pasta assets/ com arquivo README.txt explicando isso.
+
+MOBILE (adicionar no @media existente):
+.portfolio-grid { grid-template-columns: 1fr; }
+
+═══════════════════════════════════════════
+SEÇÃO 2 — AVALIAÇÕES
+═══════════════════════════════════════════
+Inserir no index.html após #portfolio e antes de #contato.
+
+IMPORTANTE: Não usar fetch() nem arquivo JSON externo.
+Dados ficam em array JS no próprio main.js — funciona sem servidor.
+
+HTML:
+<section id="avaliacoes">
+  <div class="section-wrapper">
+    <h2>O que nossos clientes dizem</h2>
+    <p class="section-subtitle">Avaliações reais do Google</p>
+    <div class="reviews-track" id="reviews-track"></div>
+    <div class="reviews-nav">
+      <button class="reviews-btn" id="reviews-prev" aria-label="Anterior">&#8592;</button>
+      <span id="reviews-counter" class="reviews-counter"></span>
+      <button class="reviews-btn" id="reviews-next" aria-label="Próximo">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+DADOS — declarar no topo do bloco novo em main.js:
+const reviews = [
+  { name: "Cliente Exemplo <!-- EDITAR -->", stars: 5,
+    text: "Serviço excelente, prazo cumprido e acabamento perfeito. <!-- EDITAR -->",
+    date: "março de 2025 <!-- EDITAR -->" },
+  // repetir para 8 entradas
+];
+
+JS (função isolada, adicionar ao main.js — máximo 35 linhas):
+function initReviews() {
+  // renderizar cards a partir do array reviews[]
+  // um card visível por vez
+  // botões prev/next alternam com display none/flex
+  // atualizar contador "2 / 8"
+  // auto-avançar a cada 5s, pausar no hover do track
+  // nenhuma variável global — tudo dentro da função
+}
+document.addEventListener('DOMContentLoaded', initReviews);
+
+CSS (adicionar antes do @media existente):
+.reviews-track { position: relative; min-height: 180px; }
+.review-card {
+  display: none;
+  flex-direction: column;
+  gap: var(--s-2);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--s-3);
+}
+.review-card.active { display: flex; }
+.review-stars { color: var(--accent); font-size: var(--text-lg); }
+.review-text { font-size: var(--text-base); color: var(--text); line-height: 1.6; }
+.review-meta { font-size: var(--text-sm); color: var(--text-muted); }
+.reviews-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+}
+.reviews-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: var(--s-1) var(--s-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--text-lg);
+  transition: background 0.2s;
+}
+.reviews-btn:hover { background: rgba(79,163,227,0.1); }
+.reviews-counter { font-size: var(--text-sm); color: var(--text-muted); }
+
+MOBILE (no @media existente):
+.reviews-nav { gap: var(--s-1); }
+
+═══════════════════════════════════════════
+ATUALIZAR NAV
+═══════════════════════════════════════════
+Adicionar ao menu de navegação existente (não reescrever o nav inteiro):
+- Link "Portfólio" → href="#portfolio"
+- Link "Avaliações" → href="#avaliacoes"
+
+═══════════════════════════════════════════
+CHECKLIST ANTES DE ENTREGAR
+═══════════════════════════════════════════
+□ Nenhuma variável CSS nova — apenas as já existentes no :root
+□ Nenhuma função existente alterada no main.js
+□ Nenhuma seção existente alterada no index.html
+□ Sem fetch(), sem JSON externo, sem CDN
+□ .portfolio-img renderiza sem imagem quebrada
+□ Reviews renderizam sem servidor (array inline)
+□ Links do nav apontam para #portfolio e #avaliacoes
+□ JS total do main.js não ultrapassa 100 linhas
+□ CSS novo inserido antes do @media existente
