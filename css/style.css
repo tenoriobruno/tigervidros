@@ -50,7 +50,7 @@
   --shadow-lg: 0 16px 48px rgba(31, 60, 120, 0.15);
 
   /* Adicionais */
-  --header-bg-blur:    rgba(234, 240, 251, 0.85);
+  --header-bg-blur:    rgba(12, 18, 38, 0.92);
   --btn-hover-glass:   rgba(37, 99, 235, 0.08);
   --whatsapp:          #25D366;
   --shadow-whatsapp:   0 4px 20px rgba(37, 211, 102, 0.4);
@@ -137,16 +137,16 @@ header {
   background: var(--header-bg-blur);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   transition: box-shadow 0.3s;
 }
-header.scrolled { box-shadow: var(--shadow); }
+header.scrolled { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; padding-top: var(--s-2); padding-bottom: var(--s-2); }
 nav { display: flex; align-items: center; }
 .nav-links { display: flex; list-style: none; gap: var(--s-3); }
-.nav-links a { color: var(--text-muted); font-size: var(--text-sm); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover { color: var(--accent); }
-.hamburger { display: none; background: none; border: none; cursor: pointer; color: var(--text); padding: var(--s-1); }
+.nav-links a { color: rgba(255, 255, 255, 0.75); font-size: var(--text-sm); font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.85); padding: var(--s-1); }
 
 /* Hero */
 .hero {
@@ -371,10 +371,10 @@ nav { display: flex; align-items: center; }
     top: calc(100% + var(--s-1));
     left: 0;
     right: 0;
-    background: rgba(255,255,255,0.95);
+    background: rgba(12, 18, 38, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-md);
     padding: var(--s-2);
     flex-direction: column;
@@ -383,9 +383,9 @@ nav { display: flex; align-items: center; }
     box-shadow: var(--shadow);
   }
   .nav-links.open { display: flex; }
-  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.08); }
   .nav-links li:last-child { border-bottom: none; }
-  .nav-links a { display: block; padding: var(--s-2) var(--s-1); font-size: var(--text-base); }
+  .nav-links a { display: block; padding: var(--s-2) var(--s-1); font-size: var(--text-base); color: rgba(255,255,255,0.8); }
 
   /* Hero */
   .hero { padding-top: 110px; }

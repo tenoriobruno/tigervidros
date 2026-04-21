@@ -1,0 +1,52 @@
+You are a senior frontend engineer.
+
+## CONTEXT
+The website uses a light, premium glassmorphism/architectural design system. The top-left logo currently has a black background element that visually clashes with the current light header.
+
+This creates a broken visual integration in the header area.
+
+---
+
+## PROBLEM TO SOLVE
+The header background is too light relative to the logo container, causing:
+- strong visual contrast around the logo
+- lack of cohesion in the navigation bar
+- the logo appearing "pasted" instead of integrated
+
+---
+
+## OBJECTIVE
+Adjust ONLY the header / navbar background to improve visual integration with the logo.
+
+The goal is to make the logo feel naturally embedded in the header design system.
+
+---
+
+## IMPLEMENTATION REQUIREMENTS
+
+- Modify ONLY the header / navbar background styling
+- Keep page background, sections, and layout unchanged
+- Introduce a darker tonal layer in the header area only
+- Preferred approach:
+  - subtle dark neutral overlay OR
+  - soft gradient (top slightly darker → bottom lighter) OR
+  - glassmorphism header with darker tint
+- Ensure the result still fits a premium architectural / glass aesthetic
+
+---
+
+## DESIGN CONSTRAINTS
+
+- Must remain minimal and premium
+- No pure black header background
+- No redesign of layout or components
+- Navigation text must remain fully readable
+- Must preserve existing spacing and structure
+
+---
+
+## SUCCESS CRITERIA
+
+- Logo visually blends into the header background
+- Header feels like a unified design layer (not a separate block)
+- Overall UI maintains light premium aesthetic while improving contrast control
