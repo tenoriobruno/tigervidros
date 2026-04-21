@@ -11,6 +11,12 @@ const portfolioData = [
   { title: 'Espelho Banheiro', desc: 'Espelho bisotado com acabamento em alumínio — Poá' }
 ];
 
+const reviewsData = [
+  { name: 'Joyce Silva.', rating: 5, text: 'Quero deixar registrado minha excelente experiência. Desde o primeiro contato, foram extremamente dedicados, atenciosos e prestativos. O atendimento foi impecável, e o comprometimento com prazos me surpreendeu, tudo foi entregue exatamente no dia combinado, com um acabamento perfeito e de altíssima qualidade. É raro encontrar profissionais tão pontuais e comprometidos com a satisfação do cliente. Estou muito feliz com o resultado e recomendo de olhos fechados!' },
+  { name: 'Luana Teixeira.', rating: 5, text: 'Equipe nota 10000%. Muito educados e atenciosos. Cuidadoso com o trabalho. Excelente profissionais! Só sei que ficou lindoooo meu apê 😍' },
+  { name: 'Fernando Tavares.', rating: 5, text: 'Contratamos a instalação de um box. O serviço ficou excelente. Eles foram rápidos no atendimento e na colocação. Indicamos o trabalho.' }
+];
+
 function renderPortfolio() {
   const grid = document.getElementById('portfolio-grid');
   portfolioData.forEach((item, idx) => {
@@ -27,7 +33,23 @@ function renderPortfolio() {
   });
 }
 
+function renderReviews() {
+  const grid = document.getElementById('reviews-grid');
+  if (!grid) return;
+  reviewsData.forEach(review => {
+    const el = document.createElement('div');
+    el.className = 'review-card';
+    el.innerHTML = `
+      <div class="review-stars">${'★'.repeat(review.rating)}</div>
+      <p class="review-text">"${review.text}"</p>
+      <p class="review-name">— ${review.name}</p>
+    `;
+    grid.appendChild(el);
+  });
+}
+
 renderPortfolio();
+renderReviews();
 
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', scrollY > 80);

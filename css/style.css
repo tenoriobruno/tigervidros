@@ -204,6 +204,18 @@ nav { display: flex; align-items: center; }
 .step h3 { font-size: var(--text-base); font-weight: 600; margin-bottom: var(--s-2); }
 .step p { color: var(--text-muted); font-size: var(--text-sm); }
 
+/* Avaliações */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); }
+.review-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--s-3);
+}
+.review-stars { font-size: var(--text-lg); color: #FFD700; margin-bottom: var(--s-2); }
+.review-text { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--s-2); font-style: italic; }
+.review-name { font-size: var(--text-sm); color: var(--text); font-weight: 600; }
+
 /* Diferenciais */
 .benefits { display: flex; gap: var(--s-4); flex-wrap: wrap; }
 .benefit { flex: 1; min-width: 200px; }
@@ -286,6 +298,7 @@ nav { display: flex; align-items: center; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
   .benefits { flex-direction: column; }
   .social-links { flex-direction: column; align-items: stretch; }
   .social-btn { justify-content: center; }
