@@ -1,0 +1,84 @@
+Otimize o site TigerVidros com foco em experiência mobile real (não apenas responsividade).
+
+Contexto:
+O site funciona bem no desktop, mas no mobile apresenta problemas no header:
+- logo grande demais
+- botão "Orçamento" desproporcional
+- menu comprimido horizontalmente
+
+Objetivo:
+Melhorar significativamente a usabilidade mobile seguindo boas práticas modernas de UX, sem quebrar o desktop.
+
+========================
+ABORDAGEM
+========================
+
+Não apenas reduzir tamanhos.
+Reavaliar a organização do header para mobile.
+
+========================
+TAREFA
+========================
+
+1. Header Mobile (prioridade máxima)
+- evitar layout espremido
+- garantir hierarquia clara (logo → ação → navegação)
+
+Você pode:
+- reduzir elementos
+- reorganizar layout
+- quebrar em múltiplas linhas
+- simplificar navegação
+
+2. Navegação
+- evitar menu horizontal comprimido
+- limitar itens visíveis no mobile
+- se necessário, transformar em menu colapsável (hamburger)
+
+3. Botões
+- garantir área de toque adequada (~44px mínimo)
+- evitar botões grandes demais ou dominantes
+- manter equilíbrio visual
+
+4. Logo
+- reduzir tamanho no mobile
+- preservar legibilidade
+- evitar competir com CTA
+
+5. Espaçamento
+- garantir espaço entre elementos (evitar cliques acidentais)
+- melhorar leitura e toque
+
+6. Usabilidade real
+- considerar uso com uma mão (thumb)
+- evitar elementos críticos muito no topo se forem difíceis de clicar
+
+========================
+DESKTOP
+========================
+
+- manter layout atual
+- permitir apenas pequenos ajustes visuais se necessário
+- não alterar estrutura principal
+
+========================
+REGRAS
+========================
+
+- aplicar mudanças mobile usando media queries
+- manter código simples
+- não adicionar frameworks
+- não refatorar o site inteiro
+- priorizar clareza e conversão
+
+========================
+FORMATO
+========================
+
+- aplicar mudanças diretamente
+- listar alterações de forma objetiva
+
+========================
+
+Objetivo final:
+Um site que funciona naturalmente no mobile, sem elementos espremidos, com navegação clara e foco em conversão via WhatsApp.

@@ -121,6 +121,7 @@ nav { display: flex; align-items: center; }
   position: relative;
   overflow: hidden;
   padding-top: var(--s-8);
+  margin-top: 70px;
 }
 .hero-glow {
   position: absolute;
@@ -274,12 +275,24 @@ nav { display: flex; align-items: center; }
 
 /* @media — único bloco mobile */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-  nav { position: relative; }
+  header { padding-top: var(--s-2); padding-bottom: var(--s-2); }
+  .header-inner { flex-wrap: wrap; gap: var(--s-2); }
+  header img { width: 120px; height: auto; }
+  .hamburger { display: flex; padding: var(--s-2); }
+  nav { position: relative; width: 100%; order: 3; }
+  header .btn-primary {
+    order: 2;
+    width: auto;
+    padding: var(--s-2) var(--s-3);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
   .nav-links {
     display: none;
     position: absolute;
     top: 100%;
+    left: 0;
     right: 0;
     background: var(--bg);
     border: 1px solid var(--border);
@@ -287,23 +300,37 @@ nav { display: flex; align-items: center; }
     padding: var(--s-2);
     flex-direction: column;
     gap: var(--s-2);
-    min-width: 160px;
+    min-width: auto;
     z-index: 10;
   }
   .nav-links.open { display: flex; }
   .hero h1 { font-size: var(--text-xl); }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn-primary,
-  .hero-actions .btn-secondary { width: 100%; text-align: center; }
+  .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .benefits { flex-direction: column; }
   .social-links { flex-direction: column; align-items: stretch; }
-  .social-btn { justify-content: center; }
+  .social-btn {
+    justify-content: center;
+    min-height: 44px;
+    padding: var(--s-2) var(--s-3);
+  }
   .section-wrapper { padding: var(--s-6) 0; }
   .container { padding: 0 var(--s-2); }
+  .btn-primary, .btn-secondary { min-height: 44px; padding-top: var(--s-2); padding-bottom: var(--s-2); }
+  .hero { margin-top: 0; padding-top: 120px; }
+  header img { max-width: 100%; }
   .footer-bottom { flex-direction: column; gap: var(--s-2); text-align: center; }
   .whatsapp-float { bottom: var(--s-2); right: var(--s-2); }
 }
