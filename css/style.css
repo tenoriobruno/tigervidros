@@ -273,25 +273,28 @@ nav { display: flex; align-items: center; }
 /* Utilitários */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-/* @media — único bloco mobile */
+/* @media — tablet/mobile (768px) */
 @media (max-width: 768px) {
-  header { padding-top: var(--s-2); padding-bottom: var(--s-2); }
-  .header-inner { flex-wrap: wrap; gap: var(--s-2); }
-  header img { width: 120px; height: auto; }
-  .hamburger { display: flex; padding: var(--s-2); }
-  nav { position: relative; width: 100%; order: 3; }
-  header .btn-primary {
-    order: 2;
-    width: auto;
-    padding: var(--s-2) var(--s-3);
-    min-height: 44px;
-    display: flex;
+  /* Header: logo + botão na linha 1, hamburger na linha 2 */
+  .header-inner {
+    display: grid;
+    grid-template-areas:
+      "logo cta"
+      "nav  nav";
+    grid-template-columns: 1fr auto;
+    gap: var(--s-1) var(--s-2);
     align-items: center;
+    padding-top: var(--s-2);
+    padding-bottom: var(--s-2);
   }
+  .header-inner img { grid-area: logo; width: 110px; height: auto; }
+  .header-inner > .btn-primary { grid-area: cta; font-size: var(--text-sm); padding: 0.6rem var(--s-2); min-height: 44px; }
+  .header-inner > nav { grid-area: nav; width: 100%; display: flex; align-items: center; position: relative; }
+  .hamburger { display: flex; padding: var(--s-1); min-height: 44px; min-width: 44px; align-items: center; justify-content: center; }
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: calc(100% + var(--s-1));
     left: 0;
     right: 0;
     background: var(--bg);
@@ -299,38 +302,60 @@ nav { display: flex; align-items: center; }
     border-radius: var(--radius-md);
     padding: var(--s-2);
     flex-direction: column;
-    gap: var(--s-2);
-    min-width: auto;
+    gap: 0;
     z-index: 10;
+    box-shadow: var(--shadow);
   }
   .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a { display: block; padding: var(--s-2) var(--s-1); font-size: var(--text-base); }
+
+  /* Hero */
+  .hero { padding-top: 110px; }
   .hero h1 { font-size: var(--text-xl); }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary {
     width: 100%;
     text-align: center;
-    min-height: 44px;
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
+  /* Layout */
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .benefits { flex-direction: column; }
-  .social-links { flex-direction: column; align-items: stretch; }
-  .social-btn {
-    justify-content: center;
-    min-height: 44px;
-    padding: var(--s-2) var(--s-3);
-  }
   .section-wrapper { padding: var(--s-6) 0; }
   .container { padding: 0 var(--s-2); }
-  .btn-primary, .btn-secondary { min-height: 44px; padding-top: var(--s-2); padding-bottom: var(--s-2); }
-  .hero { margin-top: 0; padding-top: 120px; }
-  header img { max-width: 100%; }
+
+  /* Botões */
+  .btn-primary, .btn-secondary { min-height: 44px; }
+
+  /* Social */
+  .social-links { flex-direction: column; align-items: stretch; }
+  .social-btn { justify-content: center; min-height: 44px; padding: var(--s-2) var(--s-3); }
+
+  /* Footer */
   .footer-bottom { flex-direction: column; gap: var(--s-2); text-align: center; }
-  .whatsapp-float { bottom: var(--s-2); right: var(--s-2); }
+
+  /* WhatsApp float — acima do fold, sem conflito */
+  .whatsapp-float { bottom: var(--s-3); right: var(--s-2); width: 52px; height: 52px; }
+}
+
+/* @media — pequenos celulares (480px) */
+@media (max-width: 480px) {
+  .header-inner img { width: 90px; }
+  .header-inner > .btn-primary { font-size: 0.8rem; padding: 0.5rem var(--s-2); }
+  .hero { padding-top: 100px; }
+  .hero h1 { font-size: var(--text-lg); }
+  .hero-sub { font-size: var(--text-base); }
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: var(--text-lg); }
+  .whatsapp-float { bottom: var(--s-2); right: var(--s-1); width: 48px; height: 48px; }
 }

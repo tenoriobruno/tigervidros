@@ -1,0 +1,119 @@
+Refatore a experiência mobile do site TigerVidros com base em boas práticas modernas de UX mobile, mantendo o desktop funcional.
+
+IMPORTANTE:
+As tentativas anteriores focaram apenas em CSS e não resolveram o problema.
+Agora é necessário ajustar a estrutura de layout mobile, não apenas tamanhos.
+
+========================
+OBJETIVO
+========================
+
+Criar uma experiência mobile clara, usável com uma mão, sem elementos espremidos e com foco em conversão (WhatsApp).
+
+========================
+PRINCÍPIOS APLICADOS
+========================
+
+- Mobile-first (não apenas responsivo)
+- Thumb-friendly (uso com uma mão)
+- Hierarquia clara de elementos
+- Redução de poluição visual
+- Navegação simples
+
+========================
+TAREFA
+========================
+
+1. HEADER MOBILE (REFAZER ESTRUTURA)
+
+No mobile (até 480px), o header deve seguir este padrão:
+
+- Linha 1:
+  - logo à esquerda (pequeno e proporcional)
+  - botão de ação (Orçamento) à direita (não dominante)
+
+- Linha 2:
+  - navegação simplificada OU menu hamburger
+
+Regras:
+- NÃO manter todos os elementos na mesma linha
+- evitar qualquer compressão horizontal
+
+2. NAVEGAÇÃO
+
+- substituir menu horizontal por:
+  - menu colapsável (hamburger) OU
+  - lista vertical simples
+
+- garantir:
+  - espaçamento entre itens
+  - fácil clique com dedo
+
+3. BOTÕES
+
+- área de toque mínima (~44px altura)
+- evitar botões muito largos ou muito altos
+- manter proporção visual equilibrada
+
+4. LOGO
+
+- reduzir no mobile
+- não competir com CTA
+- manter legibilidade
+
+5. ESPAÇAMENTO E RESPIRO
+
+- adicionar espaço entre elementos clicáveis
+- evitar cliques acidentais
+- melhorar leitura
+
+6. WHATSAPP FLOAT
+
+- garantir que não conflite com outros botões
+- manter acessível, mas não intrusivo
+
+========================
+BREAKPOINTS
+========================
+
+- criar um breakpoint específico:
+  @media (max-width: 480px)
+
+- NÃO depender apenas do 768px existente
+
+========================
+DESKTOP
+========================
+
+- manter layout atual
+- não alterar estrutura existente
+- apenas pequenos ajustes se extremamente necessário
+
+========================
+REGRAS CRÍTICAS
+========================
+
+- evitar soluções paliativas (ex: apenas reduzir tamanhos)
+- priorizar reorganização de layout
+- manter código simples
+- não adicionar frameworks
+- não refatorar o projeto inteiro
+
+========================
+FORMATO
+========================
+
+- aplicar mudanças diretamente
+- listar de forma objetiva o que foi alterado
+
+========================
+
+OBJETIVO FINAL:
+
+Um site que no mobile:
+- não tem elementos espremidos
+- é fácil de usar com uma mão
+- tem navegação clara
+- incentiva clique no WhatsApp
+
+Sem degradar o desktop.
