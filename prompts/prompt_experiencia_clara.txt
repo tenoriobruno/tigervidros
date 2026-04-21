@@ -1,0 +1,51 @@
+Ajuste o tema visual do site TigerVidros para deixá-lo mais claro e leve, aplicando mudanças VISÍVEIS.
+O site é para uma vidraçaria. É interessante ter cores que remetem ao espelhos, vidros e reflexos. O usuário tem que sentir que um site de vidraçaria.
+
+IMPORTANTE:
+As alterações anteriores não geraram impacto visual perceptível.
+Agora o foco é mudança prática e clara.
+
+========================
+TAREFA
+========================
+
+1. Fundo geral
+- alterar fundo principal para um tom claro (usar --c-000 ou similar)
+- remover uso predominante de fundo escuro
+
+2. Cards
+- tornar cards claros (fundo branco ou quase branco)
+- manter borda leve ou sombra
+
+3. Seções
+- aplicar alternância de fundos claros (ex: branco / azul muito suave)
+- evitar seções escuras contínuas
+
+4. Texto
+- ajustar cores para manter contraste com fundo claro
+- evitar texto claro sobre fundo claro
+
+5. Botões
+- manter azul como destaque
+- garantir que continuem visíveis em fundo claro
+
+========================
+REGRAS
+========================
+
+- NÃO refatorar layout
+- NÃO alterar estrutura HTML
+- fazer mudanças simples e diretas no CSS
+- priorizar impacto visual claro
+
+========================
+FORMATO
+========================
+
+- aplicar mudanças diretamente
+- listar o que foi alterado
+
+========================
+
+Objetivo:
+Deixar o site visivelmente mais claro e leve, mantendo identidade e funcionalidade.
