@@ -1,0 +1,45 @@
+Corrija os problemas críticos do site TigerVidros com o menor número de mudanças possível.
+
+Antes de alterar qualquer coisa:
+- leia index.html e o arquivo JavaScript (main.js ou script.js)
+- entenda como os dados de portfólio e avaliações estão definidos
+
+========================
+TAREFAS OBRIGATÓRIAS
+========================
+
+1. PORTFÓLIO NÃO ESTÁ RENDERIZANDO
+
+- O container #portfolio-grid está vazio
+- Corrigir o JavaScript para renderizar os itens do portfólio
+- Usar o array de dados já existente (não criar novos dados desnecessários)
+- Garantir que os cards apareçam corretamente na tela
+
+2. SEÇÃO DE AVALIAÇÕES NÃO EXISTE
+
+- Criar a seção <section id="avaliacoes"> no index.html
+- Estrutura simples e consistente com o restante do site
+- Renderizar avaliações usando o array já existente no JavaScript (ex: const reviews)
+
+========================
+REGRAS IMPORTANTES
+========================
+
+- NÃO refatorar o site inteiro
+- NÃO alterar layout existente
+- NÃO mudar estilos desnecessariamente
+- NÃO criar estruturas complexas
+- manter código simples e consistente
+
+========================
+FORMATO DA RESPOSTA
+========================
+
+- Entregar apenas as alterações em formato diff
+- Não explicar, não comentar, não adicionar texto extra
+- Apenas o necessário para corrigir os problemas
+
+========================
+
+Objetivo:
+Fazer o portfólio e as avaliações funcionarem corretamente sem aumentar complexidade.

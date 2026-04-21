@@ -1,0 +1,47 @@
+Aplique melhorias finais no site TigerVidros com foco em aumentar confiança, qualidade percebida e conversão.
+Você pode propor pequenas melhorias adicionais se identificar oportunidades claras, desde que sejam simples, não alterem a estrutura do site e estejam alinhadas com aumento de conversão.
+
+Contexto:
+O site já está estruturado e com bons textos. Agora o objetivo é fazer melhorias incrementais de alto impacto sem alterar a estrutura geral.
+
+TAREFA:
+
+1. Portfólio (mais confiança)
+- Melhorar os itens do portfólio adicionando mais contexto quando possível
+  (ex: "Instalação de box em São Paulo", "Projeto recente")
+- Manter simplicidade
+
+2. Avaliações (mais credibilidade)
+- Adicionar representação visual de avaliação (ex: estrelas ★★★★★)
+- Ajustar textos para parecerem mais naturais e confiáveis
+
+3. Botões de WhatsApp
+- Garantir que todos os links de WhatsApp incluam mensagem automática
+  exemplo:
+  "Olá, gostaria de solicitar um orçamento de vidros"
+- Aplicar em todos os botões
+
+4. Microcopy de confiança
+- Adicionar pequenas frases próximas aos botões:
+  exemplos:
+  - "Resposta rápida"
+  - "Orçamento sem compromisso"
+- Sem poluir o layout
+
+5. Seção de redes sociais
+- Melhorar o texto para reforçar prova social
+- Tornar mais atrativo (ex: "Veja nossos trabalhos reais no Instagram")
+
+6. Pequenos ajustes visuais
+- Adicionar leve efeito de hover nas imagens do portfólio (zoom suave)
+- Garantir consistência visual geral
+
+Diretrizes:
+- NÃO alterar a estrutura do site
+- NÃO refatorar layout
+- NÃO adicionar novas seções complexas
+- manter código simples
+- manter identidade visual atual
+
+Objetivo final:
+Aumentar a confiança do visitante e a taxa de conversão com ajustes sutis e eficazes.

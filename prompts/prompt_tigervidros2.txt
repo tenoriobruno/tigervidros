@@ -1,0 +1,57 @@
+PREENCHIMENTO AUTOMÁTICO DE PLACEHOLDERS — TIGERVIDROS
+
+Os 3 arquivos estão prontos. Agora você vai preencher todos os dados específicos da empresa.
+
+═══════════════════════════════════════════
+Use os dados abaixo
+═══════════════════════════════════════════
+
+1️⃣  Número do WhatsApp com código de país
+    Exemplo: 5511939031930
+    Será convertido para: https://wa.me/5511939031930
+    (vai aparecer em 4 lugares: header, hero 2x, footer, botão flutuante)
+
+2️⃣  Cidade principal de atendimento
+    Exemplo: Poá, Suzano, Mogi da Cruzes, Ferraz e São Paulo
+    (vai no rodapé: "Atendemos as cidades do Alto Tietê e da grande São Paulo")
+
+3️⃣  Deseja adicionar logo.png?
+    [ ] Não — manter <span class="logo">TigerVidros</span>
+    [X] Sim — qual o caminho do arquivo? Exemplo: images/tigervidros_logo.jpg
+
+═══════════════════════════════════════════
+VALIDAÇÃO
+═══════════════════════════════════════════
+
+Antes de aplicar:
+✓ Número WhatsApp: apenas dígitos, entre 10 e 15
+✓ Cidade: não vazia, sem caracteres especiais
+✓ Logo (se fornecida): arquivo existe? (avisar se não encontrar)
+
+═══════════════════════════════════════════
+APLICAR SUBSTITUIÇÕES
+═══════════════════════════════════════════
+
+Substitua em TODOS os arquivos:
+
+index.html:
+  · https://wa.me/5511999999999 → https://wa.me/[NUMERO_DIGITADO]
+  · [cidade] → [CIDADE_DIGITADA]
+  · <span class="logo">TigerVidros</span> → <img src="[LOGO_DIGITADO]" alt="Logo TigerVidros"> (SE fornecido)
+
+Remover comentários <!-- EDITAR --> após cada substituição.
+
+═══════════════════════════════════════════
+RELATÓRIO FINAL
+═══════════════════════════════════════════
+
+Após concluir, exiba:
+
+✓ WhatsApp: [NUMERO]
+✓ Cidade: [CIDADE]
+✓ Logo: [SIM/NÃO - ARQUIVO]
+
+✅ Todos os placeholders preenchidos
+✅ Site pronto para publicação
+
+Parar aqui.
